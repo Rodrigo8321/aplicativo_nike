@@ -25,5 +25,67 @@
     "web": {
       "favicon": "./assets/favicon.png"
     }
+  },
+  "react": {
+    "import": "React from 'react';",
+    "components": [
+      {
+        "name": "View",
+        "import": "import { View } from 'react-native';"
+      },
+      {
+        "name": "Text",
+        "import": "import { Text } from 'react-native';"
+      },
+      {
+        "name": "Button",
+        "import": "import { Button } from 'react-native';"
+      },
+      {
+        "name": "StyleSheet",
+        "import": "import { StyleSheet } from 'react-native';"
+      }
+    ],
+    "navigation": {
+      "import": "import { NavigationContainer } from '@react-navigation/native';",
+      "stack": {
+        "import": "import { createStackNavigator } from '@react-navigation/stack';"
+      }
+    },
+    "screens": {
+      "HomeScreen": {
+        "function": "function HomeScreen({ navigation }) { return (<View style={styles.container}><Text>Bem-vindo à Página Inicial</Text><Button title='Ir para Login' onPress={() => navigation.navigate('Login')} /><Button title='Ir para Produtos' onPress={() => navigation.navigate('Produtos')} /></View>); }"
+      },
+      "LoginScreen": {
+        "function": "function LoginScreen({ navigation }) { return (<View style={styles.container}><Text>Página de Login</Text><Button title='Voltar para Home' onPress={() => navigation.navigate('Home')} /></View>); }"
+      },
+      "ProductScreen": {
+        "function": "function ProductScreen({ navigation }) { return (<View style={styles.container}><Text>Página de Produtos</Text><Button title='Voltar para Home' onPress={() => navigation.navigate('Home')} /></View>); }"
+      }
+    },
+    "stackNavigator": {
+      "initialRouteName": "Home",
+      "screens": [
+        {
+          "name": "Home",
+          "component": "HomeScreen"
+        },
+        {
+          "name": "Login",
+          "component": "LoginScreen"
+        },
+        {
+          "name": "Produtos",
+          "component": "ProductScreen"
+        }
+      ]
+    },
+    "styles": {
+      "container": {
+        "flex": 1,
+        "justifyContent": "center",
+        "alignItems": "center"
+      }
+    }
   }
 }
